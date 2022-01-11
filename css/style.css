@@ -1,0 +1,126 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    padding: 24px;
+}
+.content
+{
+    margin:  0 15vw;
+}
+.menu
+{
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+}
+.menu>div
+{
+    display: inline-block;
+    width: 30vw;
+    padding: 1vw 0 ;
+    border-radius: 15px;
+}
+
+.menu>div:hover
+{
+    color: #117DC1;
+    background-color: #EDF9FF;
+    cursor: pointer;
+}
+
+.active
+{
+    color: #117DC1;
+    background-color: #EDF9FF;
+}
+.no-active-content
+{
+    display: none;
+}
+.content-catalog
+{
+    margin-top:30px ;
+}
+.treeHTML {
+    line-height: normal;
+  }
+  .treeHTML details {
+    display: block;
+  }
+  .treeHTML div {
+    position: relative;
+    margin: 20px 0 0 .5em;
+    padding: 0 0 0 2em;
+    
+  }
+  .treeHTML summary { 
+
+    position: absolute;
+    top: -5px;
+    left: 0;
+    cursor: pointer;
+    
+  }
+  details summary {
+    display: block;
+    background-color: #117DC1; 
+    width:  25px;
+    height: 25px;
+    border-radius: 90px;
+    
+    
+  }
+  details summary::-webkit-details-marker {
+    display: none;
+  }
+
+ .circle {
+    position: relative;
+}
+ .circle .horizontal {
+    position: absolute;
+    background-color: rgb(255, 255, 255);
+    width: 10px;
+    height: 1px;
+    left: 50%;
+    margin: -0.5px 0 0 -5px;
+    padding: 0;
+    top: 50%;
+}
+ .circle .vertical {
+    position: absolute;
+    background-color: rgb(255, 255, 255);
+    width: 1px;
+    height: 10px;
+    left: 50%;
+    padding: 0;
+    margin: -5px 0 0 -0.5px;
+    top: 50%;
+}
+
+details[open] summary>.vertical
+{
+    display: none;
+}
+
+  .treeHTML details[open] summary {
+    outline: none;
+  }
+
+  .empty
+  {
+      text-align: center;
+      margin-top: 100px;
+  }
+  .empty>div
+  {
+      margin: 20px;
+  }
+  .empty-one-text
+  {
+      font-weight: 800;
+      font-size: 24px;
+  }
