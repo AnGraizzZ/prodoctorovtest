@@ -124,3 +124,19 @@ details[open] summary>.vertical
       font-weight: 800;
       font-size: 24px;
   }
+
+  .lbox
+  {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .loading
+  {
+    background-image: url('../img/loader.gif');
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 200px;
+    height: 200px;
+    text-align: center;
+  }
