@@ -3,6 +3,10 @@
     padding: 0;
 }
 
+a{
+    text-decoration: none;
+}
+
 body{
     padding: 24px;
 }
@@ -152,13 +156,12 @@ details[open] summary>.vertical
   .photo {
     
     display: inline-block;
-    margin: 21px;
+    margin: 40px;
     position: relative;
   }
 
   .star
   {
-    background-image: url('../img/star_empty.png');
     background-repeat: no-repeat;
     background-position: center;
     width: 32px;
@@ -169,6 +172,8 @@ details[open] summary>.vertical
     cursor: pointer;
 
   }
+
+
 
   /**/
   
