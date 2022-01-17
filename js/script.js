@@ -19,6 +19,13 @@ catalog.onclick = function() {
   };
 
   favor.onclick = function() {
+    //Обновление избранного
+    favotHTML=document.getElementById("content-favor");
+    favotHTML.innerHTML='<div class="lbox"><div class="loading"></div></div>';
+    catalogHTML=document.getElementById("treeHTML-catalog");
+    catalogHTML.innerHTML='<div class="lbox"><div class="loading"></div></div>';
+    upfavourites();
+
     var acatalog = document.getElementById("catalog");
     var afavor = document.getElementById("favor");
     afavor.classList.add("active");
@@ -29,12 +36,7 @@ catalog.onclick = function() {
     acatalog.classList.add("no-active-content");
     afavor.classList.remove("no-active-content");
 
-    //Обновление избранного
-    favotHTML=document.getElementById("content-favor");
-    favotHTML.innerHTML='<div class="lbox"><div class="loading"></div></div>';
-    catalogHTML=document.getElementById("treeHTML-catalog");
-    catalogHTML.innerHTML='<div class="lbox"><div class="loading"></div></div>';
-    upfavourites();
+    
     
   };
   window.onload = function(){ 
@@ -104,10 +106,8 @@ catalog.onclick = function() {
       };;
     };
   };
-
   //фото пользователей
   function photo(album){
-    // userHTML=document.getElementById("treeHTML-catalog");
      albumHTML=document.getElementById("photo"+album);
      const xhr = new XMLHttpRequest();
      xhr.open('GET', ' https://json.medrating.org/photos?albumId='+album, true);
@@ -119,7 +119,6 @@ catalog.onclick = function() {
          albumHTML.innerHTML='<summary class="circle"><div class="horizontal"></div><div class="vertical"></div></summary><div class="photoalbum">';
          for (var key in res)
          {
-          
            var ContentHTML = ' \
                                     <div class="photo">\
                                     <div class="overlay" id="urlphoto'+res[key].id+'">\
@@ -170,8 +169,6 @@ catalog.onclick = function() {
               thumbnailUrl: res[key].thumbnailUrl
             }
             localStorage['favorphoto'+id] = JSON.stringify(obj);
-            const i = JSON.stringify(obj);
-            /**/
           }
          }
        }
@@ -183,9 +180,7 @@ catalog.onclick = function() {
     starHTML=document.getElementById("starid"+id);
     starHTML.innerHTML='<img src="img/star_empty.png" onclick="starActive('+albumId+','+id+')">';
     if (localStorage['favorphoto'+id]) {
-      // получим из LocalStorage значение ключа «mykey» и преобразуем его с помощью метода JSON.parse() в объект
       localStorage.removeItem('favorphoto'+id);
-      //console.log(newObj);
     }
     upfavourites();
    }
@@ -210,9 +205,6 @@ catalog.onclick = function() {
       let key = localStorage.key(i);
       const res = JSON.parse(localStorage.getItem(key));
       console.log(res);
-        
-      
-          
            var ContentHTML = ' \
                                     <div class="photo">\
                                     <div class="overlay" id="urlphoto'+res.id+'">\
